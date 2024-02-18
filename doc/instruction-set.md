@@ -22,17 +22,17 @@ The mov instruction copies the data item referred to by its second operand (i.e.
 
 Syntax
 
-```s
-    mov <reg>, <reg>
-    mov <reg>, <mem>
-    mov <mem>, <reg>
-    mov <mem>, <const>
-    mov <reg>, <const>
+```asm
+mov <reg>, <reg>
+mov <reg>, <mem>
+mov <mem>, <reg>
+mov <mem>, <const>
+mov <reg>, <const>
 ```
 
 Examples
 
-```s
+```asm
 mov eax, ebx           ; copy the value in ebx into eax
 mov byte ptr [var], 5  ; store the value 5 into the byte at location var
 ```
@@ -43,7 +43,7 @@ The push instruction places its operand onto the top of the hardware supported s
 
 Syntax
 
-```s
+```asm
 push <reg32>
 push <mem>
 push <con32>
@@ -51,7 +51,7 @@ push <con32>
 
 Examples
 
-```
+```asm
 push eax     ; push eax on the stack
 push [var]   ; push the 4 bytes at address var onto the stack
 ```
@@ -62,14 +62,14 @@ The pop instruction removes the 4-byte data element from the top of the hardware
 
 Syntax
 
-```s
+```asm
 pop <reg32>
 pop <mem>
 ```
 
 Examples
 
-```s
+```asm
 pop edi     ; pop the top element of the stack into EDI.
 pop [ebx]   ; pop the top element of the stack into memory at the four bytes starting at location EBX.
 ```
@@ -80,13 +80,13 @@ The lea instruction places the address specified by its second operand into the 
 
 Syntax
 
-```s
+```asm
 lea <reg32>, <mem>
 ```
 
 Examples
 
-```S
+```asm
 lea edi, [ebx+4*esi]  ; the quantity EBX+4*ESI is placed in EDI.
 lea eax, [var]        ; the value in var is placed in EAX.
 lea eax, [val]        ; the value val is placed in EAX.
